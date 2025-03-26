@@ -52,6 +52,7 @@
     <Compile Include="Entidad\PermisoEn.cs" />
     <Compile Include="Entidad\RolUsuarioEn.cs" />
     <Compile Include="Entidad\UsuarioEn.cs" />
+    <Compile Include="Entidad\VehiculoEn.cs" />
     <Compile Include="LoginFrm.cs">
       <SubType>Form</SubType>
     </Compile>

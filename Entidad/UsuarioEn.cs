@@ -12,5 +12,13 @@ namespace URP.Entidad
         public string Usuario { get; set; }
         public string Contraseña { get; set; }
         public int Rolid { get; set; }
+
+        public UsuarioEn(int idusuario, string usuario, string contraseña, int rolid)
+        {
+            IdUsuario = idusuario;
+            Usuario = usuario;
+            Contraseña = contraseña;
+            Rolid = rolid;
+        }
     }
 }
