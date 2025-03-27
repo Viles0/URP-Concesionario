@@ -27,12 +27,12 @@ namespace URP
         CDatos datos = new CDatos();
         private void ConsultarRol(ToolStripMenuItem pTool)
         {
-            var LstOp = datos.SelectOpcion(IdRol); 
-            foreach(ToolStripMenuItem tool in pTool.DropDownItems)
+            var LstOp = datos.SelectOpcion(IdRol);
+            foreach (ToolStripMenuItem tool in pTool.DropDownItems)
             {
-                foreach(var opc in LstOp)
+                foreach (var opc in LstOp)
                 {
-                    if(opc.OpcionId==Convert.ToInt32(tool.Tag))
+                    if (opc.OpcionId == Convert.ToInt32(tool.Tag))
                     {
                         if (opc.Permitido)
                             tool.Enabled = false;
@@ -46,14 +46,12 @@ namespace URP
             formulario.Show();
             this.Close();
         }
-
         private void usuariosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             UsuarioFrm usuario = new UsuarioFrm();
             usuario.Show();
             this.Close();
         }
-
         private void MenuFrm_Load(object sender, EventArgs e)
         {
             ConsultarRol(administraciosTs);

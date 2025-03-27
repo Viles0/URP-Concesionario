@@ -10,11 +10,5 @@ namespace URP.Entidad
     {
         public int IdRol { get; set; }
         public string RolNombre { get; set; }
-
-        public RolUsuarioEn(int idrol, string rolnombre)
-        {
-            IdRol = idrol;
-            RolNombre = rolnombre;
-        }
     }
 }

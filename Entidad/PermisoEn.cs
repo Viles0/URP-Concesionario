@@ -12,13 +12,5 @@ namespace URP.Entidad
         public int RolUsuId { get; set; }
         public int OpcionId { get; set; }
         public bool Permitido { get; set; }
-
-        public PermisoEn(int idpermiso, int rolusuid, int opcionid, bool permitido)
-        {
-            IdPermiso = idpermiso;
-            RolUsuId = rolusuid;
-            OpcionId = opcionid;
-            Permitido = permitido;
-        }
     }
 }

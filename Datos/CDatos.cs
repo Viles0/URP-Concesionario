@@ -12,74 +12,92 @@ namespace URP.Datos
 {
     class CDatos
     {
-      public class DataAccess
-      { 
-        private readonly string connectionString;
-        public DataAccess(string connectionString)
-        {
-            this.connectionString = connectionString;
-        }
         public int GuardarRolUsuario(RolUsuarioEn pRol)
         {
-            using (SqlConnection conexion = new SqlConnection(connectionString))
+            CConexion cn = new CConexion();
+            using (SqlConnection Conexion = new
+                SqlConnection(cn.strinCon("dbsql")))
             {
                 try
                 {
-                    using (SqlCommand cmd = new SqlCommand("spGuardarRol", conexion))
+                    using (SqlCommand cmd = new
+                        SqlCommand("spGuardarRol", Conexion))
                     {
-                        conexion.Open();
+                        int ultimoRegistro = 0;
+                        Conexion.Open();
                         cmd.CommandType = CommandType.StoredProcedure;
-                        SqlParameter idRol = new SqlParameter("@IdRol", SqlDbType.Int) { Direction = ParameterDirection.Output };
-                        cmd.Parameters.Add(idRol);
-                        cmd.Parameters.AddWithValue("@Nom", pRol.RolNombre);
+
+                        SqlParameter IdRol = new
+                            SqlParameter("@IdRol", SqlDbType.Int);
+                        IdRol.Direction = ParameterDirection.Output;
+                        cmd.Parameters.Add(IdRol);
+
+                        cmd.Parameters.Add(new
+                            SqlParameter("@Nom", pRol.RolNombre));
                         cmd.ExecuteNonQuery();
-                        return idRol.Value != DBNull.Value ? Convert.ToInt32(idRol.Value) : 0;
+
+                        if (IdRol.Value != DBNull.Value)
+                            ultimoRegistro = Convert.ToInt32(IdRol.Value);
+                        return ultimoRegistro;
                     }
+
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine("Error: " + ex.Message);
+                    MessageBox.Show(ex.Message);
                     return 0;
                 }
             }
         }
-
         public void GuardarPermiso(PermisoEn pPermiso)
         {
-            using (SqlConnection conexion = new SqlConnection(connectionString))
+            CConexion cn = new CConexion();
+            using (SqlConnection Conexion = new
+                SqlConnection(cn.strinCon("dbSql")))
             {
                 try
                 {
-                    using (SqlCommand cmd = new SqlCommand("spGuardarPermiso", conexion))
+                    using (SqlCommand cmd = new
+                        SqlCommand("spGuardarPermiso", Conexion))
                     {
-                        conexion.Open();
+                        Conexion.Open();
                         cmd.CommandType = CommandType.StoredProcedure;
-                        cmd.Parameters.AddWithValue("@RolId", pPermiso.RolUsuId);
-                        cmd.Parameters.AddWithValue("@OpcionId", pPermiso.OpcionId);
-                        cmd.Parameters.AddWithValue("@Permitido", pPermiso.Permitido);
+
+                        cmd.Parameters.Add(new
+                            SqlParameter("@RolId", pPermiso.RolUsuId));
+                        cmd.Parameters.Add(new
+                            SqlParameter("@OpcionId", pPermiso.OpcionId));
+                        cmd.Parameters.Add(new
+                            SqlParameter("@Permitido", pPermiso.Permitido));
                         cmd.ExecuteNonQuery();
+
                     }
+
                 }
-                catch (Exception ex)
+                catch
                 {
-                    Console.WriteLine("Error: " + ex.Message);
+
                 }
             }
         }
-
         public void GuardarVehiculo(VehiculoEn pVehiculo)
         {
-            using (SqlConnection conexion = new SqlConnection(connectionString))
+
+            CConexion cn = new CConexion();
+            using (SqlConnection Conexion = new
+                SqlConnection(cn.strinCon("dbsql")))
             {
                 try
                 {
-                    using (SqlCommand cmd = new SqlCommand("spGuardarVehiculo", conexion))
+                    using (SqlCommand cmd = new SqlCommand("spGuardarVehiculo", Conexion))
                     {
-                        conexion.Open();
+                        Conexion.Open();
                         cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@IdVehiculo", pVehiculo.IdVehiculo);
                         cmd.Parameters.AddWithValue("@Marca", pVehiculo.Marca);
                         cmd.Parameters.AddWithValue("@Modelo", pVehiculo.Modelo);
                         cmd.Parameters.AddWithValue("@Año", pVehiculo.Año);
+                        cmd.Parameters.AddWithValue("@Color", pVehiculo.Color);
                         cmd.Parameters.AddWithValue("@Cilindraje", pVehiculo.Cilindraje);
                         cmd.ExecuteNonQuery();
                     }
@@ -90,7 +108,6 @@ namespace URP.Datos
                 }
             }
         }
-      }
         public DataTable comboRol()
         {
             CConexion cn = new CConexion();

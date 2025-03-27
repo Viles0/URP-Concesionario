@@ -29,13 +29,13 @@ namespace URP
             {
                 MessageBox.Show("Ingrese usuario");
                 txtUsuario.Focus();
-                return false;
+                return true;
             }
             else if (txtPassword.Text == string.Empty)
             {
                 MessageBox.Show("Ingrese password");
                 txtUsuario.Focus();
-                return false;
+                return true;
             }
             else if (IdRol == 0)
             {
