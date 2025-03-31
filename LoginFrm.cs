@@ -35,12 +35,12 @@ namespace URP
             {
                 MessageBox.Show("Ingrese password");
                 txtUsuario.Focus();
-                return true;
+                return false;
             }
             else if (IdRol == 0)
             {
                 MessageBox.Show("Usuario no registrado");
-                return true;
+                return false;
             }
             return true;
         }
@@ -48,7 +48,7 @@ namespace URP
         {
             if (ValidarCampos())
             { 
-                MenuFrm menu = new MenuFrm(IdRol);
+                MenuFrm menu = new MenuFrm();
                 menu.Show();
                 this.Hide();
             }

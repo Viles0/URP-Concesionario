@@ -12,11 +12,11 @@ namespace URP.Datos
 {
     class CDatos
     {
-        public int GuardarRolUsuario(RolUsuarioEn pRol)
+       public int GuardarRolUsuario(RolUsuarioEn pRol)
         {
             CConexion cn = new CConexion();
             using (SqlConnection Conexion = new
-                SqlConnection(cn.strinCon("dbsql")))
+                SqlConnection(cn.strinCon("dbsql")))    
             {
                 try
                 {
@@ -99,6 +99,8 @@ namespace URP.Datos
                         cmd.Parameters.AddWithValue("@Año", pVehiculo.Año);
                         cmd.Parameters.AddWithValue("@Color", pVehiculo.Color);
                         cmd.Parameters.AddWithValue("@Cilindraje", pVehiculo.Cilindraje);
+                        cmd.Parameters.AddWithValue("@Precio", pVehiculo.Precio);
+                        cmd.Parameters.AddWithValue("@Estado", pVehiculo.Estado);
                         cmd.ExecuteNonQuery();
                     }
                 }
@@ -108,7 +110,7 @@ namespace URP.Datos
                 }
             }
         }
-        public DataTable comboRol()
+        public List<VehiculoEn> BuscarVehiculo(VehiculoEn pVehiculo)
         {
             CConexion cn = new CConexion();
             DataTable dt = new DataTable();
@@ -117,22 +119,42 @@ namespace URP.Datos
             {
                 try
                 {
-                    using (SqlCommand cmd = new SqlCommand("spComboRol", Conexion))
+                    using (SqlCommand cmd = new SqlCommand("spBuscarVehiculo", Conexion))
                     {
-                        cmd.CommandType = CommandType.StoredProcedure;
-
-                        SqlDataAdapter da = new SqlDataAdapter(cmd);
                         Conexion.Open();
+                        SqlDataAdapter da = new SqlDataAdapter(cmd);
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@Marca", pVehiculo.Marca);
+                        cmd.Parameters.AddWithValue("@Modelo", pVehiculo.Modelo);
+                        cmd.Parameters.AddWithValue("@Año", pVehiculo.Año);
+                        cmd.Parameters.AddWithValue("@Color", pVehiculo.Color);
+                        cmd.Parameters.AddWithValue("@Cilindraje", pVehiculo.Cilindraje);
+
+                        da.SelectCommand = cmd;
                         da.Fill(dt);
+
+                        List<VehiculoEn> vehiculos = (from row in dt.AsEnumerable()
+                                                      select new VehiculoEn()
+                                                      {
+                                                          IdVehiculo = int.Parse(row["IdVehiculo"].ToString()),
+                                                          Marca = row["Marca"].ToString(),
+                                                          Modelo = row["Modelo"].ToString(),
+                                                          Año = int.Parse(row["Año"].ToString()),
+                                                          Color = row["Color"].ToString(),
+                                                          Cilindraje = int.Parse(row["Cilindraje"].ToString()),
+                                                          Precio = decimal.Parse(row["Precio"].ToString()),
+                                                          Estado = row["Estado"].ToString()
+                                                      }).ToList();
+
+                        return vehiculos;
                     }
                 }
-                catch
+                catch (Exception ex)
                 {
-
+                    MessageBox.Show("Error al buscar vehículos: " + ex.Message);
+                    return null;
                 }
             }
-
-            return dt;
         }
         public void GuardarUsuario(UsuarioEn pUsuario)
         {
@@ -230,7 +252,7 @@ namespace URP.Datos
                                  IdPermiso = int.Parse(row["IdPermiso"].ToString()),
                                  RolUsuId = int.Parse(row["RolUsuId"].ToString()),
                                  OpcionId = int.Parse(row["OpcionId"].ToString()),
-                                 Permitido = bool.Parse(row["Permitido"].ToString())
+                                 Permitido = bool.Parse(row["Permitido"].ToString()),
                              }).ToList();
                         return Opcion;
                     }

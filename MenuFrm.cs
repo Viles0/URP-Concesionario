@@ -20,12 +20,12 @@ namespace URP
         }
         public MenuFrm(int pIdRol)
         {
-            InitializeComponent();
-            pIdRol = IdRol;
+          InitializeComponent();
+          pIdRol = IdRol;
         }
         int IdRol;
         CDatos datos = new CDatos();
-        private void ConsultarRol(ToolStripMenuItem pTool)
+       /* private void ConsultarRol(ToolStripMenuItem pTool)
         {
             var LstOp = datos.SelectOpcion(IdRol);
             foreach (ToolStripMenuItem tool in pTool.DropDownItems)
@@ -39,7 +39,7 @@ namespace URP
                     }
                 }
             }
-        }
+        }*/
         private void rToolStripMenuItem_Click(object sender, EventArgs e)
         {
             RolUsuarioFrm formulario = new RolUsuarioFrm();
@@ -52,12 +52,19 @@ namespace URP
             usuario.Show();
             this.Close();
         }
-        private void MenuFrm_Load(object sender, EventArgs e)
+       /* private void MenuFrm_Load(object sender, EventArgs e)
         {
             ConsultarRol(administraciosTs);
             ConsultarRol(serviciosTs);
             ConsultarRol(mantenimientoTs);
             ConsultarRol(clientesTs);
+        }*/
+
+        private void pesasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            VehiculoFrm vehiculo = new VehiculoFrm();
+            vehiculo.Show();
+            this.Close();
         }
     }
 }

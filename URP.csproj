@@ -49,6 +49,8 @@
   <ItemGroup>
     <Compile Include="Datos\CConexion.cs" />
     <Compile Include="Datos\CDatos.cs" />
+    <Compile Include="Entidad\ClienteEn.cs" />
+    <Compile Include="Entidad\FacturaEn.cs" />
     <Compile Include="Entidad\PermisoEn.cs" />
     <Compile Include="Entidad\RolUsuarioEn.cs" />
     <Compile Include="Entidad\UsuarioEn.cs" />
@@ -79,6 +81,12 @@
     <Compile Include="UsuarioFrm.Designer.cs">
       <DependentUpon>UsuarioFrm.cs</DependentUpon>
     </Compile>
+    <Compile Include="VehiculoFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VehiculoFrm.Designer.cs">
+      <DependentUpon>VehiculoFrm.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="LoginFrm.resx">
       <DependentUpon>LoginFrm.cs</DependentUpon>
     </EmbeddedResource>
@@ -99,6 +107,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UsuarioFrm.resx">
       <DependentUpon>UsuarioFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VehiculoFrm.resx">
+      <DependentUpon>VehiculoFrm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

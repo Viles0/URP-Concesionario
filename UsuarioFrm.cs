@@ -22,18 +22,6 @@ namespace URP
         }
         CDatos datos = new CDatos();
         UsuarioEn usuarioEntidad = new UsuarioEn();
-        private void CargarCombo()
-        {
-            DataTable lst = datos.comboRol();
-            cbRol.DataSource = lst;
-            cbRol.DisplayMember = "RolNombre";
-            cbRol.ValueMember = "IdRol";
-        }
-
-        private void UsuarioFrm_Load(object sender, EventArgs e)
-        {
-            CargarCombo();
-        }
         private void Limpiar()
         {
             txtUsuario.Focus();
