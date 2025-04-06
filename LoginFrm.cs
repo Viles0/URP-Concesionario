@@ -53,5 +53,12 @@ namespace URP
                 this.Hide();
             }
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            MenuFrm usuario = new MenuFrm();
+            usuario.Show();
+            this.Hide();
+        }
     }
 }

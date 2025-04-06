@@ -87,7 +87,7 @@
             // 
             this.empleadosToolStripMenuItem.Name = "empleadosToolStripMenuItem";
             this.empleadosToolStripMenuItem.Size = new System.Drawing.Size(270, 40);
-            this.empleadosToolStripMenuItem.Tag = "1";
+            this.empleadosToolStripMenuItem.Tag = "2";
             this.empleadosToolStripMenuItem.Text = "Empleados";
             // 
             // usuariosToolStripMenuItem
@@ -146,20 +146,21 @@
             // 
             this.membresiasToolStripMenuItem.Name = "membresiasToolStripMenuItem";
             this.membresiasToolStripMenuItem.Size = new System.Drawing.Size(280, 40);
-            this.membresiasToolStripMenuItem.Tag = "8";
+            this.membresiasToolStripMenuItem.Tag = "7";
             this.membresiasToolStripMenuItem.Text = "Reparaciones";
             // 
             // lockersToolStripMenuItem
             // 
             this.lockersToolStripMenuItem.Name = "lockersToolStripMenuItem";
             this.lockersToolStripMenuItem.Size = new System.Drawing.Size(280, 40);
-            this.lockersToolStripMenuItem.Tag = "9";
-            this.lockersToolStripMenuItem.Text = "Garantias";            // 
+            this.lockersToolStripMenuItem.Tag = "8";
+            this.lockersToolStripMenuItem.Text = "Garantias";
+            // 
             // rToolStripMenuItem
             // 
             this.rToolStripMenuItem.Name = "rToolStripMenuItem";
             this.rToolStripMenuItem.Size = new System.Drawing.Size(280, 40);
-            this.rToolStripMenuItem.Tag = "10";
+            this.rToolStripMenuItem.Tag = "9";
             this.rToolStripMenuItem.Text = "Rol de usuarios";
             this.rToolStripMenuItem.Click += new System.EventHandler(this.rToolStripMenuItem_Click);
             // 
@@ -178,21 +179,21 @@
             // 
             this.altaToolStripMenuItem.Name = "altaToolStripMenuItem";
             this.altaToolStripMenuItem.Size = new System.Drawing.Size(270, 40);
-            this.altaToolStripMenuItem.Tag = "11";
+            this.altaToolStripMenuItem.Tag = "10";
             this.altaToolStripMenuItem.Text = "Facturas";
             // 
             // bajaToolStripMenuItem
             // 
             this.bajaToolStripMenuItem.Name = "bajaToolStripMenuItem";
             this.bajaToolStripMenuItem.Size = new System.Drawing.Size(270, 40);
-            this.bajaToolStripMenuItem.Tag = "12";
+            this.bajaToolStripMenuItem.Tag = "11";
             this.bajaToolStripMenuItem.Text = "Alquileres";
             // 
             // ventaToolStripMenuItem
             // 
             this.ventaToolStripMenuItem.Name = "ventaToolStripMenuItem";
             this.ventaToolStripMenuItem.Size = new System.Drawing.Size(270, 40);
-            this.ventaToolStripMenuItem.Tag = "13";
+            this.ventaToolStripMenuItem.Tag = "12";
             this.ventaToolStripMenuItem.Text = "Ventas";
             // 
             // MenuFrm
@@ -205,7 +206,8 @@
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "MenuFrm";
-            this.Text = "Form2";            this.menuStrip1.ResumeLayout(false);
+            this.Text = "Form2";
+            this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();

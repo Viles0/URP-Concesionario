@@ -129,7 +129,9 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "UsuarioFrm";
-            this.Text = "UsuarioFrm";            this.ResumeLayout(false);
+            this.Text = "UsuarioFrm";
+            this.Load += new System.EventHandler(this.UsuarioFrm_Load);
+            this.ResumeLayout(false);
             this.PerformLayout();
 
         }

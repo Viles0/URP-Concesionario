@@ -76,7 +76,7 @@ namespace URP.Datos
                 }
                 catch
                 {
-
+                    
                 }
             }
         }
@@ -93,7 +93,6 @@ namespace URP.Datos
                     {
                         Conexion.Open();
                         cmd.CommandType = CommandType.StoredProcedure;
-                        cmd.Parameters.AddWithValue("@IdVehiculo", pVehiculo.IdVehiculo);
                         cmd.Parameters.AddWithValue("@Marca", pVehiculo.Marca);
                         cmd.Parameters.AddWithValue("@Modelo", pVehiculo.Modelo);
                         cmd.Parameters.AddWithValue("@Año", pVehiculo.Año);
@@ -153,6 +152,89 @@ namespace URP.Datos
                 {
                     MessageBox.Show("Error al buscar vehículos: " + ex.Message);
                     return null;
+                }
+            }
+        }
+        public void GenerarFactura(FacturaEn pFactura)
+        {
+            CConexion cn = new CConexion();
+            using (SqlConnection Conexion = new SqlConnection(cn.strinCon("dbsql")))
+            {
+                try
+                {
+                    using (SqlCommand cmd = new SqlCommand("spGenerarFactura", Conexion))
+                    {
+                        Conexion.Open();
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@IdVenta", pFactura.IdFactura);
+                        cmd.Parameters.AddWithValue("@Fecha", pFactura.ClienteId);
+                        cmd.Parameters.AddWithValue("@Total", pFactura.Monto);
+                        cmd.Parameters.AddWithValue("@Fecha", pFactura.Fecha);
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Error al generar factura: " + ex.Message);
+                }
+            }
+        }
+        public List<FacturaEn> VisualizarFacturas()
+        {
+            List<FacturaEn> facturas = new List<FacturaEn>();
+            CConexion cn = new CConexion();
+            using (SqlConnection Conexion = new SqlConnection(cn.strinCon("dbsql")))
+            {
+                try
+                {
+                    using (SqlCommand cmd = new SqlCommand("spVisualizarFacturas", Conexion))
+                    {
+                        Conexion.Open();
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        using (SqlDataReader reader = cmd.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                facturas.Add(new FacturaEn()
+                                {
+                                    IdFactura = reader.GetInt32(0),
+                                    ClienteId = reader.GetInt32(1),
+                                    Monto = reader.GetDecimal(2),
+                                    Fecha = reader.GetDateTime(3)
+                                    
+                                });
+                            }
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Error al visualizar facturas: " + ex.Message);
+                }
+            }
+            return facturas;
+        }
+        public void GuardarVenta(VentaEn pVenta)
+        {
+            CConexion cn = new CConexion();
+            using (SqlConnection Conexion = new SqlConnection(cn.strinCon("dbsql")))
+            {
+                try
+                {
+                    using (SqlCommand cmd = new SqlCommand("spGuardarVenta", Conexion))
+                    {
+                        Conexion.Open();
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@IdCliente", pVenta.IdVenta);
+                        cmd.Parameters.AddWithValue("@IdVehiculo", pVenta.UsuarioId);
+                        cmd.Parameters.AddWithValue("@Fecha", pVenta.VehiculoId);
+                        cmd.Parameters.AddWithValue("@Total", pVenta.FacturaId);
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Error al guardar venta: " + ex.Message);
                 }
             }
         }
@@ -252,7 +334,7 @@ namespace URP.Datos
                                  IdPermiso = int.Parse(row["IdPermiso"].ToString()),
                                  RolUsuId = int.Parse(row["RolUsuId"].ToString()),
                                  OpcionId = int.Parse(row["OpcionId"].ToString()),
-                                 Permitido = bool.Parse(row["Permitido"].ToString()),
+                                 Permitido = bool.Parse(row["Permitido"].ToString())
                              }).ToList();
                         return Opcion;
                     }
@@ -262,6 +344,32 @@ namespace URP.Datos
                     return null;
                 }
             }
+        }
+        public DataTable comboRol()
+        {
+            CConexion cn = new CConexion();
+            DataTable dt = new DataTable();
+
+            using (SqlConnection Conexion = new SqlConnection(cn.strinCon("dbSql")))
+            {
+                try
+                {
+                    using (SqlCommand cmd = new SqlCommand("spComboRol", Conexion))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+
+                        SqlDataAdapter da = new SqlDataAdapter(cmd);
+                        Conexion.Open();
+                        da.Fill(dt);
+                    }
+                }
+                catch
+                {
+
+                }
+            }
+
+            return dt;
         }
     }
 }

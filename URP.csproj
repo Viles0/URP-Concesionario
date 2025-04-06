@@ -47,6 +47,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AgregarVehiculoFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AgregarVehiculoFrm.Designer.cs">
+      <DependentUpon>AgregarVehiculoFrm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Datos\CConexion.cs" />
     <Compile Include="Datos\CDatos.cs" />
     <Compile Include="Entidad\ClienteEn.cs" />
@@ -55,6 +61,7 @@
     <Compile Include="Entidad\RolUsuarioEn.cs" />
     <Compile Include="Entidad\UsuarioEn.cs" />
     <Compile Include="Entidad\VehiculoEn.cs" />
+    <Compile Include="Entidad\VentaEn.cs" />
     <Compile Include="LoginFrm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -66,6 +73,12 @@
     </Compile>
     <Compile Include="MenuFrm.Designer.cs">
       <DependentUpon>MenuFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PagoFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PagoFrm.Designer.cs">
+      <DependentUpon>PagoFrm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

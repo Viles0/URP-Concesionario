@@ -22,6 +22,17 @@ namespace URP
         }
         CDatos datos = new CDatos();
         UsuarioEn usuarioEntidad = new UsuarioEn();
+        private void CargarCombo()
+        {
+            DataTable lst = datos.comboRol();
+            cbRol.DataSource = lst;
+            cbRol.DisplayMember = "RolNombre";
+            cbRol.ValueMember = "IdRol";
+        }
+        private void UsuarioFrm_Load(object sender, EventArgs e)
+        {
+            CargarCombo();
+        }
         private void Limpiar()
         {
             txtUsuario.Focus();
@@ -29,7 +40,6 @@ namespace URP
             txtPassword.Text = string.Empty;
             MessageBox.Show("Usuario guardado");
         }
-
         private void button1_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(txtUsuario.Text) || string.IsNullOrWhiteSpace(txtPassword.Text))
