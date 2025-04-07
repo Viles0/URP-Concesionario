@@ -57,6 +57,7 @@
     <Compile Include="Datos\CDatos.cs" />
     <Compile Include="Entidad\ClienteEn.cs" />
     <Compile Include="Entidad\FacturaEn.cs" />
+    <Compile Include="Entidad\FacturaGenerarEn.cs" />
     <Compile Include="Entidad\PermisoEn.cs" />
     <Compile Include="Entidad\RolUsuarioEn.cs" />
     <Compile Include="Entidad\UsuarioEn.cs" />
@@ -105,6 +106,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MenuFrm.resx">
       <DependentUpon>MenuFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PagoFrm.resx">
+      <DependentUpon>PagoFrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

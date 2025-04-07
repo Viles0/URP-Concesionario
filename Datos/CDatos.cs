@@ -109,7 +109,7 @@ namespace URP.Datos
                 }
             }
         }
-        public List<VehiculoEn> BuscarVehiculo(VehiculoEn pVehiculo)
+        public DataTable BuscarVehiculo()
         {
             CConexion cn = new CConexion();
             DataTable dt = new DataTable();
@@ -120,42 +120,22 @@ namespace URP.Datos
                 {
                     using (SqlCommand cmd = new SqlCommand("spBuscarVehiculo", Conexion))
                     {
-                        Conexion.Open();
-                        SqlDataAdapter da = new SqlDataAdapter(cmd);
                         cmd.CommandType = CommandType.StoredProcedure;
-                        cmd.Parameters.AddWithValue("@Marca", pVehiculo.Marca);
-                        cmd.Parameters.AddWithValue("@Modelo", pVehiculo.Modelo);
-                        cmd.Parameters.AddWithValue("@Año", pVehiculo.Año);
-                        cmd.Parameters.AddWithValue("@Color", pVehiculo.Color);
-                        cmd.Parameters.AddWithValue("@Cilindraje", pVehiculo.Cilindraje);
 
-                        da.SelectCommand = cmd;
+                        SqlDataAdapter da = new SqlDataAdapter(cmd);
+                        Conexion.Open();
                         da.Fill(dt);
-
-                        List<VehiculoEn> vehiculos = (from row in dt.AsEnumerable()
-                                                      select new VehiculoEn()
-                                                      {
-                                                          IdVehiculo = int.Parse(row["IdVehiculo"].ToString()),
-                                                          Marca = row["Marca"].ToString(),
-                                                          Modelo = row["Modelo"].ToString(),
-                                                          Año = int.Parse(row["Año"].ToString()),
-                                                          Color = row["Color"].ToString(),
-                                                          Cilindraje = int.Parse(row["Cilindraje"].ToString()),
-                                                          Precio = decimal.Parse(row["Precio"].ToString()),
-                                                          Estado = row["Estado"].ToString()
-                                                      }).ToList();
-
-                        return vehiculos;
                     }
                 }
-                catch (Exception ex)
+                catch
                 {
-                    MessageBox.Show("Error al buscar vehículos: " + ex.Message);
-                    return null;
+
                 }
             }
+
+            return dt;
         }
-        public void GenerarFactura(FacturaEn pFactura)
+        public void GenerarFactura(FacturaGenerarEn pFactura)
         {
             CConexion cn = new CConexion();
             using (SqlConnection Conexion = new SqlConnection(cn.strinCon("dbsql")))
@@ -166,10 +146,15 @@ namespace URP.Datos
                     {
                         Conexion.Open();
                         cmd.CommandType = CommandType.StoredProcedure;
-                        cmd.Parameters.AddWithValue("@IdVenta", pFactura.IdFactura);
-                        cmd.Parameters.AddWithValue("@Fecha", pFactura.ClienteId);
-                        cmd.Parameters.AddWithValue("@Total", pFactura.Monto);
+
+                        cmd.Parameters.AddWithValue("@Nombre", pFactura.Nombre);
+                        cmd.Parameters.AddWithValue("@Apellido", pFactura.Apellido);
+                        cmd.Parameters.AddWithValue("@Telefono", pFactura.Telefono);
+                        cmd.Parameters.AddWithValue("@Email", pFactura.Email);
+                        cmd.Parameters.AddWithValue("@IdVehiculo", pFactura.VehiculoId);
+                        cmd.Parameters.AddWithValue("@Monto", pFactura.Monto);
                         cmd.Parameters.AddWithValue("@Fecha", pFactura.Fecha);
+
                         cmd.ExecuteNonQuery();
                     }
                 }
