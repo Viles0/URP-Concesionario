@@ -49,6 +49,10 @@ namespace URP
                 cbEstado.DataSource = dt.DefaultView.ToTable(true, "Estado");
                 cbEstado.DisplayMember = "Estado";
                 cbEstado.ValueMember = "Estado";
+
+                cbPrecio.DataSource = dt.DefaultView.ToTable(true, "Precio");
+                cbPrecio.DisplayMember = "Precio";
+                cbPrecio.ValueMember = "Precio";
             }
             else
             {
@@ -80,8 +84,9 @@ namespace URP
             string color = "Gris";
             int cilindraje = 2900;
             string estado = "Usado";
+            decimal precio = 520000;
 
-            PagoFrm pago = new PagoFrm(marca,modelo,año,color,cilindraje,estado);
+            PagoFrm pago = new PagoFrm(marca,modelo,año,color,cilindraje,estado,precio);
             pago.Show();
             this.Hide();
         }
@@ -94,8 +99,9 @@ namespace URP
             string color = "Azul";
             int cilindraje = 3000;
             string estado = "Usado";
+            decimal precio = 240000;
 
-            PagoFrm pago = new PagoFrm(marca,modelo,año,color,cilindraje,estado);
+            PagoFrm pago = new PagoFrm(marca,modelo,año,color,cilindraje,estado,precio);
             pago.Show();
             this.Hide();
         }
@@ -108,8 +114,9 @@ namespace URP
             string color = "Negro";
             int cilindraje = 2900;
             string estado = "Nuevo";
+            decimal precio = 320000;
 
-            PagoFrm pago = new PagoFrm(marca,modelo,año,color,cilindraje,estado);
+            PagoFrm pago = new PagoFrm(marca,modelo,año,color,cilindraje,estado,precio);
             pago.Show();
             this.Hide();
         }
@@ -122,8 +129,9 @@ namespace URP
             string color = "Rojo";
             int cilindraje = 3500;
             string estado = "Nuevo";
+            decimal precio = 2500000;
 
-            PagoFrm pago = new PagoFrm(marca,modelo,año,color,cilindraje,estado);
+            PagoFrm pago = new PagoFrm(marca,modelo,año,color,cilindraje,estado,precio);
             pago.Show();
             this.Hide();
         }
@@ -274,6 +282,39 @@ namespace URP
                     pictureBoxBmw.Visible = true;
                     break;
             }
+        }
+
+        private void cbPrecio_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            pictureBoxPorsche.Visible = false;
+            pictureBoxAudi.Visible = false;
+            pictureBoxBmw.Visible = false;
+            pictureBoxFerrari.Visible = false;
+
+            string PrecioSeleccionado = cbPrecio.Text;
+
+            switch (PrecioSeleccionado)
+            {
+                case "520000":
+                    pictureBoxPorsche.Visible = true;
+                    break;
+                case "240000":
+                    pictureBoxAudi.Visible = true;
+                    break;
+                case "320000":
+                    pictureBoxBmw.Visible = true;
+                    break;
+                case "2500000":
+                    pictureBoxFerrari.Visible = true;
+                    break;
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            MenuFrm menu = new MenuFrm();
+            menu.Show();
+            this.Hide();
         }
     }
 }

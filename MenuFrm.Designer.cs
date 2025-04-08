@@ -36,16 +36,12 @@
             this.usuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.serviciosTs = new System.Windows.Forms.ToolStripMenuItem();
             this.pesasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.spinningToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pilatesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mantenimientoTs = new System.Windows.Forms.ToolStripMenuItem();
             this.membresiasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lockersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.rToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clientesTs = new System.Windows.Forms.ToolStripMenuItem();
             this.altaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.bajaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ventaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -79,21 +75,21 @@
             // sociosToolStripMenuItem
             // 
             this.sociosToolStripMenuItem.Name = "sociosToolStripMenuItem";
-            this.sociosToolStripMenuItem.Size = new System.Drawing.Size(270, 40);
+            this.sociosToolStripMenuItem.Size = new System.Drawing.Size(234, 40);
             this.sociosToolStripMenuItem.Tag = "1";
             this.sociosToolStripMenuItem.Text = "Socios";
             // 
             // empleadosToolStripMenuItem
             // 
             this.empleadosToolStripMenuItem.Name = "empleadosToolStripMenuItem";
-            this.empleadosToolStripMenuItem.Size = new System.Drawing.Size(270, 40);
+            this.empleadosToolStripMenuItem.Size = new System.Drawing.Size(234, 40);
             this.empleadosToolStripMenuItem.Tag = "2";
             this.empleadosToolStripMenuItem.Text = "Empleados";
             // 
             // usuariosToolStripMenuItem
             // 
             this.usuariosToolStripMenuItem.Name = "usuariosToolStripMenuItem";
-            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(270, 40);
+            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(234, 40);
             this.usuariosToolStripMenuItem.Tag = "3";
             this.usuariosToolStripMenuItem.Text = "Usuarios";
             this.usuariosToolStripMenuItem.Click += new System.EventHandler(this.usuariosToolStripMenuItem_Click);
@@ -101,9 +97,7 @@
             // serviciosTs
             // 
             this.serviciosTs.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.pesasToolStripMenuItem,
-            this.spinningToolStripMenuItem,
-            this.pilatesToolStripMenuItem});
+            this.pesasToolStripMenuItem});
             this.serviciosTs.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.serviciosTs.Name = "serviciosTs";
             this.serviciosTs.Size = new System.Drawing.Size(123, 36);
@@ -112,24 +106,10 @@
             // pesasToolStripMenuItem
             // 
             this.pesasToolStripMenuItem.Name = "pesasToolStripMenuItem";
-            this.pesasToolStripMenuItem.Size = new System.Drawing.Size(270, 40);
+            this.pesasToolStripMenuItem.Size = new System.Drawing.Size(219, 40);
             this.pesasToolStripMenuItem.Tag = "4";
             this.pesasToolStripMenuItem.Text = "Vehiculos";
             this.pesasToolStripMenuItem.Click += new System.EventHandler(this.pesasToolStripMenuItem_Click);
-            // 
-            // spinningToolStripMenuItem
-            // 
-            this.spinningToolStripMenuItem.Name = "spinningToolStripMenuItem";
-            this.spinningToolStripMenuItem.Size = new System.Drawing.Size(270, 40);
-            this.spinningToolStripMenuItem.Tag = "5";
-            this.spinningToolStripMenuItem.Text = "Venta";
-            // 
-            // pilatesToolStripMenuItem
-            // 
-            this.pilatesToolStripMenuItem.Name = "pilatesToolStripMenuItem";
-            this.pilatesToolStripMenuItem.Size = new System.Drawing.Size(270, 40);
-            this.pilatesToolStripMenuItem.Tag = "6";
-            this.pilatesToolStripMenuItem.Text = "Alquiler";
             // 
             // mantenimientoTs
             // 
@@ -167,9 +147,7 @@
             // clientesTs
             // 
             this.clientesTs.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.altaToolStripMenuItem,
-            this.bajaToolStripMenuItem,
-            this.ventaToolStripMenuItem});
+            this.altaToolStripMenuItem});
             this.clientesTs.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.clientesTs.Name = "clientesTs";
             this.clientesTs.Size = new System.Drawing.Size(115, 36);
@@ -181,20 +159,7 @@
             this.altaToolStripMenuItem.Size = new System.Drawing.Size(270, 40);
             this.altaToolStripMenuItem.Tag = "10";
             this.altaToolStripMenuItem.Text = "Facturas";
-            // 
-            // bajaToolStripMenuItem
-            // 
-            this.bajaToolStripMenuItem.Name = "bajaToolStripMenuItem";
-            this.bajaToolStripMenuItem.Size = new System.Drawing.Size(270, 40);
-            this.bajaToolStripMenuItem.Tag = "11";
-            this.bajaToolStripMenuItem.Text = "Alquileres";
-            // 
-            // ventaToolStripMenuItem
-            // 
-            this.ventaToolStripMenuItem.Name = "ventaToolStripMenuItem";
-            this.ventaToolStripMenuItem.Size = new System.Drawing.Size(270, 40);
-            this.ventaToolStripMenuItem.Tag = "12";
-            this.ventaToolStripMenuItem.Text = "Ventas";
+            this.altaToolStripMenuItem.Click += new System.EventHandler(this.altaToolStripMenuItem_Click);
             // 
             // MenuFrm
             // 
@@ -223,15 +188,11 @@
         private System.Windows.Forms.ToolStripMenuItem usuariosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem serviciosTs;
         private System.Windows.Forms.ToolStripMenuItem pesasToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem spinningToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem pilatesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mantenimientoTs;
         private System.Windows.Forms.ToolStripMenuItem membresiasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem lockersToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem clientesTs;
         private System.Windows.Forms.ToolStripMenuItem rToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem altaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem bajaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem ventaToolStripMenuItem;
     }
 }

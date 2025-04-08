@@ -84,24 +84,25 @@ namespace URP.Datos
         {
 
             CConexion cn = new CConexion();
-            using (SqlConnection Conexion = new
-                SqlConnection(cn.strinCon("dbsql")))
+
+            using (SqlConnection conexion = new SqlConnection(cn.strinCon("dbsql")))
             {
                 try
                 {
-                    using (SqlCommand cmd = new SqlCommand("spGuardarVehiculo", Conexion))
-                    {
-                        Conexion.Open();
-                        cmd.CommandType = CommandType.StoredProcedure;
-                        cmd.Parameters.AddWithValue("@Marca", pVehiculo.Marca);
-                        cmd.Parameters.AddWithValue("@Modelo", pVehiculo.Modelo);
-                        cmd.Parameters.AddWithValue("@Año", pVehiculo.Año);
-                        cmd.Parameters.AddWithValue("@Color", pVehiculo.Color);
-                        cmd.Parameters.AddWithValue("@Cilindraje", pVehiculo.Cilindraje);
-                        cmd.Parameters.AddWithValue("@Precio", pVehiculo.Precio);
-                        cmd.Parameters.AddWithValue("@Estado", pVehiculo.Estado);
-                        cmd.ExecuteNonQuery();
-                    }
+                    SqlCommand cmd = new SqlCommand("spGuardarVehiculo", conexion);
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.AddWithValue("@Marca", pVehiculo.Marca);
+                    cmd.Parameters.AddWithValue("@Modelo", pVehiculo.Modelo);
+                    cmd.Parameters.AddWithValue("@Año", pVehiculo.Año);
+                    cmd.Parameters.AddWithValue("@Color", pVehiculo.Color);
+                    cmd.Parameters.AddWithValue("@Cilindraje", pVehiculo.Cilindraje);
+                    cmd.Parameters.AddWithValue("@Estado", pVehiculo.Estado);
+                    cmd.Parameters.AddWithValue("@Precio", pVehiculo.Precio);
+
+                    conexion.Open();
+                    cmd.ExecuteNonQuery();
+                    conexion.Close();
                 }
                 catch (Exception ex)
                 {

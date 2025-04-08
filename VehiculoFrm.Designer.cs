@@ -41,6 +41,8 @@
             this.pictureBoxFerrari = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
             this.cbEstado = new System.Windows.Forms.ComboBox();
+            this.cbPrecio = new System.Windows.Forms.ComboBox();
+            this.button3 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPorsche)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAudi)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBmw)).BeginInit();
@@ -178,6 +180,28 @@
             this.cbEstado.Text = "--Estado--";
             this.cbEstado.SelectedIndexChanged += new System.EventHandler(this.cbEstado_SelectedIndexChanged);
             // 
+            // cbPrecio
+            // 
+            this.cbPrecio.BackColor = System.Drawing.Color.Gray;
+            this.cbPrecio.FormattingEnabled = true;
+            this.cbPrecio.Location = new System.Drawing.Point(12, 458);
+            this.cbPrecio.Name = "cbPrecio";
+            this.cbPrecio.Size = new System.Drawing.Size(170, 28);
+            this.cbPrecio.TabIndex = 14;
+            this.cbPrecio.Text = "--Precio--";
+            this.cbPrecio.SelectedIndexChanged += new System.EventHandler(this.cbPrecio_SelectedIndexChanged);
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.Gray;
+            this.button3.Location = new System.Drawing.Point(11, 21);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(143, 43);
+            this.button3.TabIndex = 15;
+            this.button3.Text = "Volver";
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
             // VehiculoFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -185,6 +209,8 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(884, 591);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.cbPrecio);
             this.Controls.Add(this.cbEstado);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.pictureBoxFerrari);
@@ -222,5 +248,7 @@
         private System.Windows.Forms.PictureBox pictureBoxFerrari;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ComboBox cbEstado;
+        private System.Windows.Forms.ComboBox cbPrecio;
+        private System.Windows.Forms.Button button3;
     }
 }

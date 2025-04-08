@@ -63,6 +63,12 @@
     <Compile Include="Entidad\UsuarioEn.cs" />
     <Compile Include="Entidad\VehiculoEn.cs" />
     <Compile Include="Entidad\VentaEn.cs" />
+    <Compile Include="Factura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Factura.Designer.cs">
+      <DependentUpon>Factura.cs</DependentUpon>
+    </Compile>
     <Compile Include="LoginFrm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -101,6 +107,12 @@
     <Compile Include="VehiculoFrm.Designer.cs">
       <DependentUpon>VehiculoFrm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AgregarVehiculoFrm.resx">
+      <DependentUpon>AgregarVehiculoFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Factura.resx">
+      <DependentUpon>Factura.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LoginFrm.resx">
       <DependentUpon>LoginFrm.cs</DependentUpon>
     </EmbeddedResource>

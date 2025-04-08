@@ -66,5 +66,26 @@ namespace URP
             vehiculo.Show();
             this.Close();
         }
+
+        private void spinningToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            VehiculoFrm vehiculo = new VehiculoFrm();
+            vehiculo.Show();
+            this.Hide();
+        }
+
+        private void pilatesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            VehiculoFrm vehiculo = new VehiculoFrm();
+            vehiculo.Show();
+            this.Hide();
+        }
+
+        private void altaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Factura factura = new Factura();
+            factura.Show();
+            this.Hide();
+        }
     }
 }
