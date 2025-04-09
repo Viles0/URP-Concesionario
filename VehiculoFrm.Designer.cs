@@ -39,7 +39,6 @@
             this.pictureBoxAudi = new System.Windows.Forms.PictureBox();
             this.pictureBoxBmw = new System.Windows.Forms.PictureBox();
             this.pictureBoxFerrari = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.cbEstado = new System.Windows.Forms.ComboBox();
             this.cbPrecio = new System.Windows.Forms.ComboBox();
             this.button3 = new System.Windows.Forms.Button();
@@ -159,16 +158,6 @@
             this.pictureBoxFerrari.TabStop = false;
             this.pictureBoxFerrari.Click += new System.EventHandler(this.pictureBox4_Click);
             // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.Gray;
-            this.button1.Location = new System.Drawing.Point(443, 508);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(143, 43);
-            this.button1.TabIndex = 12;
-            this.button1.Text = "Ir a Pago";
-            this.button1.UseVisualStyleBackColor = false;
-            // 
             // cbEstado
             // 
             this.cbEstado.BackColor = System.Drawing.Color.Gray;
@@ -212,7 +201,6 @@
             this.Controls.Add(this.button3);
             this.Controls.Add(this.cbPrecio);
             this.Controls.Add(this.cbEstado);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.pictureBoxFerrari);
             this.Controls.Add(this.pictureBoxBmw);
             this.Controls.Add(this.pictureBoxAudi);
@@ -246,7 +234,6 @@
         private System.Windows.Forms.PictureBox pictureBoxAudi;
         private System.Windows.Forms.PictureBox pictureBoxBmw;
         private System.Windows.Forms.PictureBox pictureBoxFerrari;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ComboBox cbEstado;
         private System.Windows.Forms.ComboBox cbPrecio;
         private System.Windows.Forms.Button button3;

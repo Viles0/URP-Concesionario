@@ -47,5 +47,12 @@ namespace URP
                 MessageBox.Show("Por favor, ingresa un ID de factura válido.");
             }
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            MenuFrm menu = new MenuFrm();
+            menu.Show();
+            this.Hide();
+        }
     }
 }

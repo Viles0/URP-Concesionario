@@ -56,9 +56,9 @@ namespace URP
         private void button1_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(tbNombres.Text) ||
-        string.IsNullOrWhiteSpace(tbApellidos.Text) ||
-        string.IsNullOrWhiteSpace(tbTelefono.Text) ||
-        string.IsNullOrWhiteSpace(tbEmail.Text))
+            string.IsNullOrWhiteSpace(tbApellidos.Text) ||
+            string.IsNullOrWhiteSpace(tbTelefono.Text) ||
+            string.IsNullOrWhiteSpace(tbEmail.Text))
             {
                 MessageBox.Show("Por favor llena todos los campos del cliente.", "Campos requeridos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;

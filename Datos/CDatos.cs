@@ -200,30 +200,6 @@ namespace URP.Datos
             }
             return facturas;
         }
-        public void GuardarVenta(VentaEn pVenta)
-        {
-            CConexion cn = new CConexion();
-            using (SqlConnection Conexion = new SqlConnection(cn.strinCon("dbsql")))
-            {
-                try
-                {
-                    using (SqlCommand cmd = new SqlCommand("spGuardarVenta", Conexion))
-                    {
-                        Conexion.Open();
-                        cmd.CommandType = CommandType.StoredProcedure;
-                        cmd.Parameters.AddWithValue("@IdCliente", pVenta.IdVenta);
-                        cmd.Parameters.AddWithValue("@IdVehiculo", pVenta.UsuarioId);
-                        cmd.Parameters.AddWithValue("@Fecha", pVenta.VehiculoId);
-                        cmd.Parameters.AddWithValue("@Total", pVenta.FacturaId);
-                        cmd.ExecuteNonQuery();
-                    }
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine("Error al guardar venta: " + ex.Message);
-                }
-            }
-        }
         public void GuardarUsuario(UsuarioEn pUsuario)
         {
             CConexion cn = new CConexion();

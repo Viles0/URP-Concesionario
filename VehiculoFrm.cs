@@ -78,7 +78,7 @@ namespace URP
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            string marca = "Posrche";
+            string marca = "Posrsche";
             string modelo = "918 Spyder";
             int año = 2015;
             string color = "Gris";

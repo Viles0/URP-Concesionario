@@ -21,8 +21,8 @@ namespace URP
 
         private void button2_Click(object sender, EventArgs e)
         {
-            MenuFrm menu = new MenuFrm();
-            menu.Show();
+            VehiculoFrm vehiculo = new VehiculoFrm();
+            vehiculo.Show();
             this.Hide();
         }
 
