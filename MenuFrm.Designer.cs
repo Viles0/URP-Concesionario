@@ -106,7 +106,7 @@
             // pesasToolStripMenuItem
             // 
             this.pesasToolStripMenuItem.Name = "pesasToolStripMenuItem";
-            this.pesasToolStripMenuItem.Size = new System.Drawing.Size(219, 40);
+            this.pesasToolStripMenuItem.Size = new System.Drawing.Size(270, 40);
             this.pesasToolStripMenuItem.Tag = "4";
             this.pesasToolStripMenuItem.Text = "Vehiculos";
             this.pesasToolStripMenuItem.Click += new System.EventHandler(this.pesasToolStripMenuItem_Click);
@@ -156,7 +156,7 @@
             // altaToolStripMenuItem
             // 
             this.altaToolStripMenuItem.Name = "altaToolStripMenuItem";
-            this.altaToolStripMenuItem.Size = new System.Drawing.Size(270, 40);
+            this.altaToolStripMenuItem.Size = new System.Drawing.Size(204, 40);
             this.altaToolStripMenuItem.Tag = "10";
             this.altaToolStripMenuItem.Text = "Facturas";
             this.altaToolStripMenuItem.Click += new System.EventHandler(this.altaToolStripMenuItem_Click);

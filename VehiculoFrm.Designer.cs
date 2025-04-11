@@ -117,10 +117,10 @@
             // pictureBoxPorsche
             // 
             this.pictureBoxPorsche.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxPorsche.Image")));
-            this.pictureBoxPorsche.Location = new System.Drawing.Point(247, 92);
+            this.pictureBoxPorsche.Location = new System.Drawing.Point(304, 177);
             this.pictureBoxPorsche.Name = "pictureBoxPorsche";
-            this.pictureBoxPorsche.Size = new System.Drawing.Size(259, 177);
-            this.pictureBoxPorsche.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxPorsche.Size = new System.Drawing.Size(466, 344);
+            this.pictureBoxPorsche.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBoxPorsche.TabIndex = 8;
             this.pictureBoxPorsche.TabStop = false;
             this.pictureBoxPorsche.Click += new System.EventHandler(this.pictureBox1_Click);
@@ -128,10 +128,10 @@
             // pictureBoxAudi
             // 
             this.pictureBoxAudi.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxAudi.Image")));
-            this.pictureBoxAudi.Location = new System.Drawing.Point(572, 92);
+            this.pictureBoxAudi.Location = new System.Drawing.Point(284, 177);
             this.pictureBoxAudi.Name = "pictureBoxAudi";
-            this.pictureBoxAudi.Size = new System.Drawing.Size(289, 177);
-            this.pictureBoxAudi.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxAudi.Size = new System.Drawing.Size(510, 346);
+            this.pictureBoxAudi.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBoxAudi.TabIndex = 9;
             this.pictureBoxAudi.TabStop = false;
             this.pictureBoxAudi.Click += new System.EventHandler(this.pictureBox2_Click);
@@ -139,21 +139,22 @@
             // pictureBoxBmw
             // 
             this.pictureBoxBmw.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxBmw.Image")));
-            this.pictureBoxBmw.Location = new System.Drawing.Point(247, 309);
+            this.pictureBoxBmw.Location = new System.Drawing.Point(270, 207);
             this.pictureBoxBmw.Name = "pictureBoxBmw";
-            this.pictureBoxBmw.Size = new System.Drawing.Size(285, 177);
-            this.pictureBoxBmw.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxBmw.Size = new System.Drawing.Size(500, 300);
+            this.pictureBoxBmw.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pictureBoxBmw.TabIndex = 10;
             this.pictureBoxBmw.TabStop = false;
             this.pictureBoxBmw.Click += new System.EventHandler(this.pictureBox3_Click);
             // 
             // pictureBoxFerrari
             // 
+            this.pictureBoxFerrari.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pictureBoxFerrari.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxFerrari.Image")));
-            this.pictureBoxFerrari.Location = new System.Drawing.Point(572, 309);
+            this.pictureBoxFerrari.Location = new System.Drawing.Point(270, 187);
             this.pictureBoxFerrari.Name = "pictureBoxFerrari";
-            this.pictureBoxFerrari.Size = new System.Drawing.Size(259, 177);
-            this.pictureBoxFerrari.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxFerrari.Size = new System.Drawing.Size(478, 320);
+            this.pictureBoxFerrari.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pictureBoxFerrari.TabIndex = 11;
             this.pictureBoxFerrari.TabStop = false;
             this.pictureBoxFerrari.Click += new System.EventHandler(this.pictureBox4_Click);
@@ -219,6 +220,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBmw)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFerrari)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 

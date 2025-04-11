@@ -27,7 +27,6 @@ namespace URP
             cbEstado.Text = estado;
             cbPrecio.Text = precio.ToString();
         }
-
         int ObtenerIdVehiculo(string marca, string modelo, string año, string color, string cilindraje, string estado)
         {
             int id = -1;
@@ -112,7 +111,7 @@ namespace URP
 
         private void button2_Click(object sender, EventArgs e)
         {
-            MenuFrm menu = new MenuFrm();
+            VehiculoFrm menu = new VehiculoFrm();
             menu.Show();
             this.Hide();
         }

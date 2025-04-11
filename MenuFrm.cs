@@ -25,21 +25,7 @@ namespace URP
         }
         int IdRol;
         CDatos datos = new CDatos();
-       /* private void ConsultarRol(ToolStripMenuItem pTool)
-        {
-            var LstOp = datos.SelectOpcion(IdRol);
-            foreach (ToolStripMenuItem tool in pTool.DropDownItems)
-            {
-                foreach (var opc in LstOp)
-                {
-                    if (opc.OpcionId == Convert.ToInt32(tool.Tag))
-                    {
-                        if (opc.Permitido)
-                            tool.Enabled = false;
-                    }
-                }
-            }
-        }*/
+
         private void rToolStripMenuItem_Click(object sender, EventArgs e)
         {
             RolUsuarioFrm formulario = new RolUsuarioFrm();
@@ -52,14 +38,6 @@ namespace URP
             usuario.Show();
             this.Close();
         }
-       /* private void MenuFrm_Load(object sender, EventArgs e)
-        {
-            ConsultarRol(administraciosTs);
-            ConsultarRol(serviciosTs);
-            ConsultarRol(mantenimientoTs);
-            ConsultarRol(clientesTs);
-        }*/
-
         private void pesasToolStripMenuItem_Click(object sender, EventArgs e)
         {
             VehiculoFrm vehiculo = new VehiculoFrm();

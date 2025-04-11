@@ -29,7 +29,7 @@ namespace URP
             {
                 MessageBox.Show("Ingrese usuario");
                 txtUsuario.Focus();
-                return true;
+                return false;
             }
             else if (txtPassword.Text == string.Empty)
             {
@@ -59,6 +59,11 @@ namespace URP
             UsuarioFrm usuario = new UsuarioFrm();
             usuario.Show();
             this.Hide();
+        }
+
+        private void LoginFrm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
