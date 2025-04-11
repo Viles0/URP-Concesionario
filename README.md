@@ -30,12 +30,6 @@ Este proyecto fue realizado como parte de una práctica académica para aplicar 
 
 ---
 
-## 📷 Capturas de pantalla
-
-| Ventana de Pago | Resultado en DataGridView |
-|-----------------|---------------------------|
-| ![PagoFrm](ruta/a/imagen1.png) | ![Factura](ruta/a/imagen2.png) |
-
 ---
 
 ## 📁 Estructura del proyecto
