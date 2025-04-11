@@ -28,9 +28,5 @@ Autolux es una aplicación de escritorio desarrollada en C# con Windows Forms y 
 
 Este proyecto fue realizado como parte de una práctica académica para aplicar conocimientos de arquitectura de software, bases de datos y desarrollo en C#. El objetivo principal es simular un sistema completo de un concesionario, con un enfoque en la usabilidad y la estructura modular.
 
----
-
----
-
 ## 📁 Estructura del proyecto
 
